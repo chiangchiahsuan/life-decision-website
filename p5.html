@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>繪製生命歷程｜生命旅程中的決策輔助網</title>
+
+<link href="css/today5.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+   <!-- Header / NAV -->
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/TLOGO.png" alt="ACP網站Logo">
+        </a>
+
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="nav-btn">☰</label>
+
+    <nav>
+        <a href="p3.html">介紹網站緣起</a>
+        <a href="p5.html">繪製生命歷程</a>
+        <a href="p4.html">生命關係牌卡</a>
+        <a href="p2.html">認識維生醫療</a>
+        <a href="p6.html">ACP生命故事</a>
+        <a href="p7.html">為未來做準備</a>
+        <a href="p8.html">推薦相關網站</a>
+    </nav>
+    </header>
+
+<section class="page-title">
+    <h1>繪製生命軌跡圖</h1>
+    <p>
+        每個人的生命軌跡都是獨一無二，這張圖沒有標準答案，也不需要畫得完美。它是一個幫助自己回顧生命經驗、
+        整理感受與想像未來的工具。您可以依照直覺繪製，也可以之後再回來修改。
+        每個人的生命都有不同的起伏，邀請您透過這張生命軌跡圖，
+        回顧過去、看見現在，也想像未來希望的生活與照護選擇。
+    </p>
+</section>
+
+<section class="steps-banner">
+    <h2>操作方式</h2>
+
+    <div class="steps-grid">
+        <div class="step-item"><span>1</span>先在圖上點擊，新增生命事件點。</div>
+        <div class="step-item"><span>2</span>點選圓點後，可在左側填寫「當時年齡」與「簡短事件」。</div>
+        <div class="step-item"><span>3</span>拖曳圓點可以調整位置。</div>
+        <div class="step-item"><span>4</span>輸入「現在的年齡」後，圖上才會出現現在的虛線。</div>
+        <div class="step-item"><span>5</span>「暫存進度」只保存在同一台裝置與瀏覽器。</div>
+        <div class="step-item"><span>6</span>若想之後繼續編輯，請下載「可編輯檔」。</div>
+        <div class="step-item"><span>7</span>下次回到網站時，匯入可編輯檔即可繼續畫。</div>
+    </div>
+</section>
+
+<main class="trajectory-wrap">
+
+    <aside class="tool-panel">
+        <h2>填寫與編輯</h2>
+        <p>
+            請先在右側圖表中點擊，依照不同生命階段的「幸福感」高低，
+            畫出屬於自己的生命軌跡。
+        </p>
+
+        <div class="input-group">
+            <label for="userName">您的名稱</label>
+            <input type="text" id="userName" placeholder="例如：小樹">
+        </div>
+
+        <div class="input-group">
+            <label for="currentAge">現在的年齡</label>
+            <input type="number" id="currentAge" placeholder="先畫事件點，之後再填現在年齡" min="0" max="120">
+        </div>
+
+      
+
+        <div class="point-editor" id="pointEditor">
+            <h3>這個時刻的小記錄</h3>
+
+            <div class="input-group">
+                <label for="eventAge">當時年齡</label>
+                <input type="number" id="eventAge" min="0" max="120" placeholder="例如：38">
+            </div>
+
+            <div class="input-group">
+                <label for="eventText">簡短事件</label>
+                <textarea id="eventText" placeholder="例如：畢業、工作轉折、照顧家人、住院、得到支持的一刻……"></textarea>
+            </div>
+
+            <button id="deletePointBtn" type="button">移除這個點</button>
+        </div>
+
+        <div class="btn-group">
+            <button id="undoBtn" type="button">復原一點</button>
+            <button id="clearBtn" type="button">清除重畫</button>
+            <button id="saveBtn" type="button">暫存進度</button>
+            <button id="downloadBtn" type="button">下載圖片</button>
+            <button id="exportJsonBtn" type="button">下載可編輯檔</button>
+            <button id="importJsonBtn" type="button">匯入繼續編輯</button>
+
+            <input type="file" id="importJsonInput" accept=".json" style="display:none;">
+        </div>
+    </aside>
+
+    <section class="canvas-card">
+        <div class="canvas-top">
+            <h2 id="displayTitle">生命軌跡圖</h2>
+            <div class="today" id="todayText"></div>
+        </div>
+
+        <div class="canvas-box">
+            <canvas id="lifeCanvas"></canvas>
+        </div>
+    </section>
+
+</main>
+
+
+
+<footer>
+    生命旅程中的決策輔助網｜本網站目前為測試階段，感謝您的參與與回饋
+</footer>
+
+<script src="js/today5.js"></script>
+</body>
+</html>

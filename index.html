@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生命旅程中的決策輔助網</title>
+
+<!-- swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<!-- css -->
+<link href="css/today.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/TLOGO.png" alt="Logo">
+        </a>
+    </div>
+
+    <input type="checkbox" id="nav-toggle">
+
+    <label for="nav-toggle" class="nav-btn">☰</label>
+
+    <nav>
+        <a href="p3.html">介紹網站緣起</a>
+        <a href="p5.html">繪製生命歷程</a>
+        <a href="p4.html">生命關係牌卡</a>
+        <a href="p2.html">認識維生醫療</a>
+        <a href="p6.html">ACP生命故事</a>
+        <a href="p7.html">為未來做準備</a>
+        <a href="p8.html">推薦相關網站</a>
+    </nav>
+</header>
+
+<!-- hero -->
+<div class="hero">
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <img src="images/545a0f58-c5e3-412b-bf5a-5e8e2a03b77b.png" alt="hero">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/BG.png" alt="hero">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/a1144ac7-db87-45f6-bc35-34f64bae7974.png" alt="hero">
+            </div>
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="hero_text">
+        <h1>生命旅程中的決策輔助網</h1>
+        <p>陪你回望生命故事，整理心中所愛，為未來留下溫柔而清楚的方向。</p>
+    </div>
+
+</div>
+
+<!-- section -->
+<section>
+  <h1></h1>
+
+  <article>
+    <div class="a_left">
+      <a href="p3.html">
+        <img src="images/p1.png" alt="關於本團隊">
+        <div class="moreb">More</div>
+      </a>
+    </div>
+
+    <div class="a_right">
+      <h2>關於本團隊</h2>
+      <p>
+        本網站為國立陽明交通大學許樹珍教授所指導之博士生江家璇所建構，期待透過本網站陪你回望生命故事，整理心中所愛，為未來留下溫柔而清楚的方向，本網站之內容不具法律效益，僅供您個人紀錄與論文使用。
+      </p>
+    </div>
+  </article>
+</section>
+<div class="detailtitle">More Details</div>
+
+<div class="detail-images">
+
+    <a class="s_img" href="p5.html">
+        <div class="s_img_bt">生命軌跡</div>
+        <img src="images/note.png" alt="生命軌跡圖">
+    </a>
+
+    <a class="s_img" href="p2.html">
+        <div class="s_img_bt">維生醫療</div>
+        <img src="images/bbody.png" alt="身體與維生器材">
+    </a>
+
+    <a class="s_img" href="p6.html">
+        <div class="s_img_bt">生命故事</div>
+        <img src="images/story.png" alt="ACP故事">
+    </a>
+
+    <a class="s_img" href="p8.html">
+        <div class="s_img_bt">好站連結</div>
+        <img src="images/web.png" alt="好站連結">
+    </a>
+
+</div>
+
+<footer>
+&copy; 2026 生命旅程中的決策輔助網｜由國立陽明交通大學護理學院許樹珍教授與博士候選人江家璇共同設立，陪伴每段生命故事被溫柔安放。
+</footer>
+
+<!-- Initialize Swiper：只保留這一段 -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        speed: 2000,
+        spaceBetween: 0,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+
+</body>
+</html>

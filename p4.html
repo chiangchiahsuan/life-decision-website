@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>生命樹牌卡遊戲</title>
+
+    <link href="css/today4.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <!-- Header / NAV -->
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/TLOGO.png" alt="ACP網站Logo">
+        </a>
+
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="nav-btn">☰</label>
+
+    <nav>
+        <a href="p3.html">介紹網站緣起</a>
+        <a href="p5.html">繪製生命歷程</a>
+        <a href="p4.html">生命關係牌卡</a>
+        <a href="p2.html">認識維生醫療</a>
+        <a href="p6.html">ACP生命故事</a>
+        <a href="p7.html">為未來做準備</a>
+        <a href="p8.html">推薦相關網站</a>
+    </nav>
+    </header>
+
+    <!-- 頁面標題 -->
+    <section class="page-title">
+        <h1>生命樹牌卡遊戲</h1>
+        <p>
+            在生命的不同時刻，我們可能會想到不同的人。
+            請從下方關係牌卡中選擇對您重要的人，放入右側生命樹的五個層次中。
+        </p>
+    </section>
+
+    <!-- 操作說明 -->
+    <section class="guide-box">
+        <h2>遊戲說明</h2>
+        <p>
+            您可以將左側的關係牌卡拖曳到右側不同層次中。
+            同一張牌卡可以放在多個層次，例如「媽媽」可能同時是您想分享開心事情的人，
+            也是您希望討論醫療決策的人。
+        </p>
+        <p class="mobile-tip">
+            手機或平板使用時，可以先點選一張牌卡，再點選右側層次區塊放入。
+        </p>
+
+        <div class="legend-area">
+            <span class="legend-item"><span class="legend-dot cat-family"></span>家人</span>
+            <span class="legend-item"><span class="legend-dot cat-partner"></span>伴侶</span>
+            <span class="legend-item"><span class="legend-dot cat-children"></span>子女</span>
+            <span class="legend-item"><span class="legend-dot cat-relative"></span>親戚</span>
+            <span class="legend-item"><span class="legend-dot cat-friend"></span>朋友／社交</span>
+            <span class="legend-item"><span class="legend-dot cat-professional"></span>醫療／專業</span>
+            <span class="legend-item"><span class="legend-dot cat-self"></span>自己／其他</span>
+        </div>
+    </section>
+
+    <!-- 主遊戲區 -->
+    <main class="tree-game-layout">
+
+        <!-- 左側牌卡區 -->
+        <section class="card-panel">
+            <div class="panel-title">
+                <h2>關係牌卡</h2>
+                <p>請選擇生命中可能重要的人</p>
+            </div>
+
+            <div class="custom-card-area">
+                <input type="text" id="customInput" placeholder="新增其他重要的人，例如：鄰居、老師">
+                <button type="button" id="addCustomBtn">新增牌卡</button>
+            </div>
+
+            <div class="card-bank" id="cardBank">
+                <!-- JS 會自動產生牌卡 -->
+            </div>
+        </section>
+
+        <!-- 右側生命樹區 -->
+        <section class="tree-panel">
+
+            <div class="tree-title">
+                <h2>我的生命樹</h2>
+                <p>請將牌卡放入對應的生命層次</p>
+            </div>
+
+            <div class="tree-area">
+
+                <div class="tree-layer layer-1">
+                    <div class="layer-question">
+                        <span class="layer-number">第一層次</span>
+                        <h3>生命中對你而言重要的人有哪些？</h3>
+                    </div>
+                    <div class="drop-zone" data-layer="layer1"></div>
+                </div>
+
+                <div class="tree-layer layer-2">
+                    <div class="layer-question">
+                        <span class="layer-number">第二層次</span>
+                        <h3>當你有開心的事情，你會想與誰分享？</h3>
+                    </div>
+                    <div class="drop-zone" data-layer="layer2"></div>
+                </div>
+
+                <div class="tree-layer layer-3">
+                    <div class="layer-question">
+                        <span class="layer-number">第三層次</span>
+                        <h3>當你生命中遇到困難或重要事情時，你會與誰說？</h3>
+                    </div>
+                    <div class="drop-zone" data-layer="layer3"></div>
+                </div>
+
+                <div class="tree-layer layer-4">
+                    <div class="layer-question">
+                        <span class="layer-number">第四層次</span>
+                        <h3>當你面對生命末期的醫療決策時，你會希望與誰討論？</h3>
+                    </div>
+                    <div class="drop-zone" data-layer="layer4"></div>
+                </div>
+
+                <div class="tree-layer layer-5">
+                    <div class="layer-question">
+                        <span class="layer-number">第五層次</span>
+                        <h3>你會希望誰替你決策生命末期相關事宜？</h3>
+                    </div>
+                    <div class="drop-zone" data-layer="layer5"></div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 結果整理區 -->
+    <section class="result-section">
+        <h2>我的選擇結果</h2>
+        <p>
+            完成選擇後，可以整理、複製、儲存或下載成圖片，保留您的生命樹牌卡結果。
+        </p>
+
+        <div class="result-buttons">
+            <button type="button" id="showResultBtn">整理我的選擇</button>
+            <button type="button" id="saveResultBtn">儲存結果</button>
+            <button type="button" id="copyResultBtn">複製結果</button>
+            <button type="button" id="downloadImageBtn">下載圖片</button>
+            <button type="button" id="clearBtn">重新選擇</button>
+        </div>
+
+        <textarea id="resultText" readonly placeholder="您的選擇結果會顯示在這裡"></textarea>
+
+<!-- 圖片輸出區：隱藏在畫面外，只在下載圖片時使用 -->
+<div id="captureArea" class="capture-area">
+    <div class="capture-header">
+        <h3>我的生命樹牌卡結果</h3>
+        <p id="captureDate" class="capture-date"></p>
+        <p>以下為您在不同生命層次中的重要關係人選擇</p>
+    </div>
+
+    <div id="captureContent" class="capture-content">
+        <!-- JS 會自動產生圖片內容 -->
+    </div>
+</div>
+
+        <div class="next-area">
+            <a href="body.html" class="next-btn">完成，前往下一頁</a>
+        </div>
+    </section>
+
+    <footer>
+        Copyright © 2026 ACP Decision Aid Education Website. All Rights Reserved.
+    </footer>
+
+    <!-- 下載圖片功能需要 html2canvas -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="js/today4.js"></script>
+
+</body>
+
+</html>

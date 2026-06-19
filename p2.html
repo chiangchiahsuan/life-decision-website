@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="css/today2.css" rel="stylesheet" type="text/css">
+
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- fancybox -->
+<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.7" type="text/css" media="screen">
+<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.7"></script>
+
+<script>
+$(document).ready(function(){
+    $(".fancybox").fancybox({
+        maxWidth: 720,
+        fitToView: true,
+        autoSize: true,
+        closeClick: false,
+        openEffect: 'fade',
+        closeEffect: 'fade'
+    });
+});
+</script>
+
+</head>
+
+<body>
+
+<!-- header -->
+   <!-- Header / NAV -->
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/TLOGO.png" alt="ACP網站Logo">
+        </a>
+
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="nav-btn">☰</label>
+
+    <nav>
+        <a href="p3.html">介紹網站緣起</a>
+        <a href="p5.html">繪製生命歷程</a>
+        <a href="p4.html">生命關係牌卡</a>
+        <a href="p2.html">認識維生醫療</a>
+        <a href="p6.html">ACP生命故事</a>
+        <a href="p7.html">為未來做準備</a>
+        <a href="p8.html">推薦相關網站</a>
+    </nav>
+    </header>
+
+<!-- 頁面標題 -->
+<section class="page-title">
+    <h1>當身體卡頓，可以靠哪些儀器維持呢？</h1>
+    <p>
+        健康的生命，仰賴心、肺、腎與腸胃的協調運作。當器官功能受損時，醫療設備能及時補位，維持生命的延續。點擊右側的圖片認識這些「醫療生命助手」，我們能更理解機器與身體的運作方式。
+    </p>
+</section>
+
+<!-- 主版面 -->
+<section class="medical-layout">
+
+    <!-- 左側身體圖 -->
+    <section class="body-section">
+        <img src="images/cat.png" alt="身體與器官示意圖">
+    </section>
+
+    <!-- 右側醫療維生器材列表 -->
+    <section class="device-section">
+
+        <!-- AED -->
+        <a class="fancybox device-link" href="#aed-info">
+            <article>
+                <img src="images/AED (2).png" alt="自動體外心臟電擊去顫器">
+
+                <section class="device-text">
+                    <h2>急救小幫手－自動體外心臟電擊去顫器</h2>
+                    <p>
+                        當心臟突然亂跳或停工時，它能透過電擊給心臟「提醒」，幫助心臟找回正確的跳動節奏，是關鍵時刻的救命關鍵。
+                    </p>
+                </section>
+            </article>
+        </a>
+
+        <!-- 呼吸器 -->
+        <a class="fancybox device-link" href="#respirator-info">
+            <article>
+                <img src="images/R.png" alt="呼吸器">
+
+                <section class="device-text">
+                    <h2>呼吸幫手－呼吸器</h2>
+                    <p>
+                        當呼吸變得很吃力或沒辦法自己呼吸時，呼吸器會穩定地把氧氣送進肺部，幫忙交換新鮮空氣，以至於順利呼吸。
+                    </p>
+                </section>
+            </article>
+        </a>
+
+        <!-- 血液透析 -->
+        <a class="fancybox device-link" href="#hd-info">
+            <article>
+                <img src="images/HD.png" alt="血液透析設備">
+
+                <section class="device-text">
+                    <h2>身體清道夫－血液透析設備</h2>
+                    <p>
+                        當腎臟這對「過濾器」功能退化，沒辦法排尿或排毒時，這台機器可以幫忙把身體裡多餘的水分和廢物洗乾淨，讓身體保持平衡。
+                    </p>
+                </section>
+            </article>
+        </a>
+
+        <!-- 人工營養 -->
+        <a class="fancybox device-link" href="#nutrition-info">
+            <article>
+                <img src="images/NG.png" alt="人工營養與流體靜脈餵養">
+
+                <section class="device-text">
+                    <h2>能量加油站－人工營養與流體靜脈餵養</h2>
+                    <p>
+                        當體力虛弱、沒辦法正常吃東西或吸收不好時，透過導管或點滴將營養直接送進身體裡，確保身體有足夠的水分與體力。
+                    </p>
+                </section>
+            </article>
+        </a>
+
+    </section>
+
+</section>
+
+<!-- fancybox 跳出說明內容 -->
+<div style="display:none;">
+
+    <!-- AED / CPR -->
+    <div id="aed-info" class="device-popup">
+        <img src="images/CPRR.png" alt="心肺復甦術示意圖">
+    </div>
+
+    <!-- 呼吸器 / FiO2 -->
+    <div id="respirator-info" class="device-popup">
+        <img src="images/FIO.png" alt="呼吸器與氧氣濃度說明">
+    </div>
+
+    <!-- 血液透析 -->
+    <div id="hd-info" class="device-popup">
+        <img src="images/HDD.png" alt="血液透析流程說明">
+    </div>
+
+    <!-- 鼻胃管 / 人工營養 -->
+    <div id="nutrition-info" class="device-popup">
+        <img src="images/NGG.png" alt="鼻胃管說明">
+    </div>
+
+</div>
+
+<!-- footer -->
+<footer>
+&copy; 2026 生命旅程中的決策輔助網｜由國立陽明交通大學護理學院許樹珍教授與博士候選人江家璇共同設立，陪伴每段生命故事被溫柔安放。
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+```html
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>為未來做準備｜生命旅程中的決策輔助網</title>
+
+<link href="css/today7.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/TLOGO.png" alt="Logo">
+        </a>
+    </div>
+
+    <input type="checkbox" id="nav-toggle">
+    <label for="nav-toggle" class="nav-btn">☰</label>
+
+       <nav>
+        <a href="p3.html">介紹網站緣起</a>
+        <a href="p5.html">繪製生命歷程</a>
+        <a href="p4.html">生命關係牌卡</a>
+        <a href="p2.html">認識維生醫療</a>
+        <a href="p6.html">ACP生命故事</a>
+        <a href="p7.html">為未來做準備</a>
+        <a href="p8.html">推薦相關網站</a>
+    </nav>
+</header>
+
+<section class="page-title">
+    <h1>為未來做準備</h1>
+    <p>
+    這份準備表不是要一次完成所有答案，而是幫助自己慢慢整理未來可能面對的選擇。
+    有些答案現在還不確定也沒關係，您可以先寫下目前的想法，之後再回來修改。
+</div>
+
+    </p>
+</section>
+
+
+<main class="future-wrap">
+
+    <section class="form-card" id="futureCapture">
+
+        <div class="form-top">
+            <div>
+                <h2 id="resultTitle">我的未來準備表</h2>
+                <p id="todayText"></p>
+            </div>
+
+            <div class="progress-box">
+                <div class="progress-text" id="progressText">完成進度：0 / 7</div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="name-row">
+            <label for="userName">您的名稱</label>
+            <input type="text" id="userName" placeholder="例如：小樹">
+        </div>
+
+        <div class="question-list">
+
+            <section class="question-card" data-section="medical">
+                <div class="question-number">01</div>
+                <div class="question-content">
+                    <h3>醫療準備</h3>
+                    <p>如果未來面臨重大疾病或生命末期，您決定是否維持生命治療最主要的原因是什麼？</p>
+
+                    <div class="option-grid">
+                        <label><input type="radio" name="medical" value="身體感覺舒適、不痛苦">身體感覺舒適、不痛苦</label>
+                        <label><input type="radio" name="medical" value="盡量延長生命，陪家人久一點">盡量延長生命，陪家人久一點</label>
+                        <label><input type="radio" name="medical" value="保有意識清醒">保有意識清醒</label>
+                        <label><input type="radio" name="medical" value="保有身體自主,行動自如">保有身體自主,行動自如</label>
+                        <label><input type="radio" name="medical" value="造成家人照顧與經濟負擔">造成家人照顧與經濟負擔</label>
+                        <label><input type="radio" name="medical" value="其它">其它</label>
+                    </div>
+
+                    <textarea id="medicalNote" placeholder="可以補充您對急救、插管、維生醫療或人工營養的想法。"></textarea>
+                </div>
+            </section>
+
+            <section class="question-card" data-section="finance">
+                <div class="question-number">02</div>
+                <div class="question-content">
+                    <h3>財務準備</h3>
+                    <p>目前是否已整理重要財務、保險或照顧費用相關資訊？</p>
+
+                    <div class="option-grid">
+                        <label><input type="radio" name="finance" value="已整理清楚">已整理清楚</label>
+                        <label><input type="radio" name="finance" value="部分整理">部分整理</label>
+                        <label><input type="radio" name="finance" value="還沒有整理">還沒有整理</label>
+                        <label><input type="radio" name="finance" value="不知道從何開始">不知道從何開始</label>
+                        <label><input type="radio" name="finance" value="希望家人協助">希望家人協助</label>
+                        <label><input type="radio" name="finance" value="還不確定">還不確定</label>
+                    </div>
+
+                    <textarea id="financeNote" placeholder="例如：保險、帳戶、重要文件位置、照顧費用安排。"></textarea>
+                </div>
+            </section>
+
+
+            <section class="question-card" data-section="oldPlace">
+                <div class="question-number">03</div>
+                <div class="question-content">
+                    <h3>老後照顧地點</h3>
+                    <p>如果有一天老了需要被照顧，您希望主要住在哪裡？</p>
+
+                    <div class="option-grid">
+                        <label><input type="radio" name="oldPlace" value="自己家">自己家</label>
+                        <label><input type="radio" name="oldPlace" value="子女家">子女家</label>
+                        <label><input type="radio" name="oldPlace" value="親友家">親友家</label>
+                        <label><input type="radio" name="oldPlace" value="長照機構/安養中心">長照機構</label>
+                        <label><input type="radio" name="oldPlace" value="其它">還不確定</label>
+                    </div>
+
+                    <textarea id="oldPlaceNote" placeholder="請填下其它的地點或是為什麼這個地點對您重要？"></textarea>
+                </div>
+            </section>
+
+            <section class="question-card" data-section="lastPlace">
+                <div class="question-number">04</div>
+                <div class="question-content">
+                    <h3>最後一口氣</h3>
+                    <p>如果有一天只剩下最後一口氣，您希望在哪裡？</p>
+
+                    <div class="option-grid">
+                        <label><input type="radio" name="lastPlace" value="家裡">家裡</label>
+                        <label><input type="radio" name="lastPlace" value="醫院">醫院</label>
+                        <label><input type="radio" name="lastPlace" value="安寧病房">安寧病房</label>
+                        <label><input type="radio" name="lastPlace" value="熟悉的人身邊">長照機構</label>
+                        <label><input type="radio" name="lastPlace" value="其它">還不確定</label>
+                    </div>
+
+                    <textarea id="lastPlaceNote" placeholder="那一刻，您希望身邊有誰？想聽見什麼？想避免什麼？"></textarea>
+                </div>
+            </section>
+
+            <section class="question-card" data-section="funeral">
+                <div class="question-number">05</div>
+                <div class="question-content">
+                    <h3>告別與喪禮準備</h3>
+                    <p>您希望自己的告別方式比較接近哪一種？</p>
+
+                    <div class="option-grid">
+                        <label><input type="radio" name="funeral" value="簡單安靜">簡單安靜</label>
+                        <label><input type="radio" name="funeral" value="依照宗教或信仰">依照宗教或信仰</label>
+                        <label><input type="radio" name="funeral" value="家人決定即可">家人決定即可</label>
+                        <label><input type="radio" name="funeral" value="溫馨、有回憶">溫馨、有回憶</label>
+                        <label><input type="radio" name="funeral" value="不希望太鋪張">不希望太鋪張</label>
+                        <label><input type="radio" name="funeral" value="還沒想過">還沒想過</label>
+                    </div>
+
+                    <textarea id="funeralNote" placeholder="例如：音樂、照片、儀式、想通知的人、不想造成家人負擔。"></textarea>
+                </div>
+            </section>
+
+            <section class="question-card" data-section="words">
+                <div class="question-number">06</div>
+                <div class="question-content">
+                    <h3>想說的話</h3>
+                    <p>如果可以先留下一句話，您最想把這些話留給誰？</p>
+
+                    <div class="option-grid">
+                        <label><input type="radio" name="words" value="父母">父母</label>
+                        <label><input type="radio" name="words" value="伴侶">伴侶</label>
+                        <label><input type="radio" name="words" value="孩子">孩子</label>
+                        <label><input type="radio" name="words" value="手足">手足</label>
+                        <label><input type="radio" name="words" value="朋友">朋友</label>
+                        <label><input type="radio" name="words" value="自己">自己</label>
+                    </div>
+
+                    <textarea id="wordsNote" placeholder="可以是感謝、道歉、祝福、交代，或一句一直想說的話。"></textarea>
+                </div>
+            </section>
+
+            <section class="question-card" data-section="proxy">
+                <div class="question-number">07</div>
+                <div class="question-content">
+                    <h3>重要代理人／決策支持者</h3>
+                    <p>如果未來需要有人協助醫療決策，您希望誰最理解您的想法？</p>
+
+                    <div class="option-grid">
+                        <label><input type="radio" name="proxy" value="配偶／伴侶">配偶／伴侶</label>
+                        <label><input type="radio" name="proxy" value="子女">子女</label>
+                        <label><input type="radio" name="proxy" value="父母">父母</label>
+                        <label><input type="radio" name="proxy" value="手足">手足</label>
+                        <label><input type="radio" name="proxy" value="朋友">朋友</label>
+                        <label><input type="radio" name="proxy" value="還不確定">還不確定</label>
+                    </div>
+
+                    <textarea id="proxyNote" placeholder="為什麼是這個人？他／她理解您什麼？"></textarea>
+                </div>
+            </section>
+
+        
+        </div>
+
+    </section>
+
+    <aside class="side-panel">
+        <h2>完成後可以保存</h2>
+        <p>
+            您可以將這份未來準備表下載成圖片，也可以下載可編輯檔，之後再回來繼續修改。
+        </p>
+
+        <div class="side-progress">
+            <div id="sideProgressText">目前完成 0 題</div>
+        </div>
+
+        <div class="file-buttons">
+            <button id="saveBtn" type="button">暫存進度</button>
+            <button id="downloadImageBtn" type="button">下載圖片</button>
+            <button id="exportBtn" type="button">下載可編輯檔</button>
+            <button id="importBtn" type="button">匯入繼續編輯</button>
+            <button id="clearAllBtn" type="button">清除重填</button>
+            <input type="file" id="importInput" accept=".json" style="display:none;">
+        </div>
+
+        <div class="hint">
+            小提醒：圖片適合保存成果；可編輯檔適合之後回到網站繼續修改。
+        </div>
+    </aside>
+
+</main>
+
+<footer>
+    生命旅程中的決策輔助網｜本網站目前為測試階段，感謝您的參與與回饋
+</footer>
+
+<script src="js/today7.js"></script>
+</body>
+</html>
+```
