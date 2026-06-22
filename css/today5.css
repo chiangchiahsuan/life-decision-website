@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+
+/* 基本設定 */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 1.2rem;
+    background: #f0ead2;
+    color: rgba(108,88,76,1);
+}
+
+/* header */
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgb(247,252,236);
+}
+
+/* logo */
+.logo{
+    width: 70px;
+    background: none;
+    margin-left: 0;
+}
+
+.logo img{
+    width: 100%;
+    display: block;
+}
+
+/* nav */
+nav{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+
+    padding-right: 36px;
+    background: none;
+
+    white-space: nowrap;
+}
+
+nav a{
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    color: rgba(108,88,76,1);
+    font-weight: bold;
+    font-size: 1.05em;
+    transition: transform 0.3s ease;
+    background: none;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    color: rgba(108,88,76,1);
+    font-weight: 800;
+    transform: scale(1.08);
+    background: none;
+}
+
+/* 隱藏 checkbox */
+#nav-toggle{
+    display: none;
+}
+
+/* 桌機版不顯示三條線 */
+.nav-btn{
+    display: none;
+}
+
+/* 頁面標題 */
+.page-title{
+    width: 78%;
+    max-width: 1200px;
+    margin: 125px auto 45px;
+    text-align: center;
+
+    background: rgba(108,88,76,0.52);
+    padding: 34px 58px;
+    border-radius: 32px;
+
+    animation: fadeUp 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+.page-title h1{
+    margin-bottom: 16px;
+    font-size: 42px;
+    color: rgba(108,88,76,1);
+}
+
+.page-title p{
+    font-size: 20px;
+    line-height: 1.8;
+    color: rgba(108,88,76,1);
+}
+
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 操作方式區塊 */
+.steps-banner{
+    width: 88%;
+    max-width: 1280px;
+    margin: -15px auto 45px;
+    padding: 26px 30px;
+
+    background: #fefae0;
+    border-radius: 28px;
+    box-shadow: 0 10px 24px rgba(108,88,76,0.12);
+}
+
+.steps-banner h2{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 22px;
+    color: rgba(108,88,76,1);
+}
+
+.steps-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 22px;
+}
+
+.step-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(108,88,76,1);
+}
+
+.step-item span{
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: rgba(108,88,76,1);
+    color: #fefae0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* 主工具區 */
+.trajectory-wrap{
+    width: 88%;
+    max-width: 1280px;
+    margin: 0 auto 70px;
+
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* 左側說明與控制 */
+.tool-panel{
+    background: #fefae0;
+    border-radius: 28px;
+    padding: 28px;
+    box-shadow: 0 10px 24px rgba(108,88,76,0.12);
+}
+
+.tool-panel h2{
+    font-size: 28px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+    color: rgba(108,88,76,1);
+}
+
+.tool-panel p{
+    font-size: 16px;
+    line-height: 1.75;
+    margin-bottom: 20px;
+}
+
+.input-group{
+    margin-bottom: 18px;
+}
+
+.input-group label{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.input-group input{
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid rgba(108,88,76,0.25);
+    border-radius: 14px;
+    background: #fffdf0;
+    color: rgba(108,88,76,1);
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 16px;
+}
+
+.input-group textarea{
+    width: 100%;
+    min-height: 76px;
+    resize: vertical;
+    padding: 12px 14px;
+    border: 2px solid rgba(108,88,76,0.25);
+    border-radius: 14px;
+    background: #fffdf0;
+    color: rgba(108,88,76,1);
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.hint{
+    background: rgba(169,132,103,0.2);
+    padding: 14px 16px;
+    border-radius: 18px;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 20px 0;
+}
+
+/* 點的編輯區 */
+.point-editor{
+    display: none;
+    background: rgba(255,253,240,0.95);
+    border: 2px solid rgba(108,88,76,0.18);
+    border-radius: 20px;
+    padding: 18px;
+    margin-top: 20px;
+}
+
+.point-editor h3{
+    font-size: 20px;
+    margin-bottom: 14px;
+    color: rgba(108,88,76,1);
+}
+
+#deletePointBtn{
+    width: 100%;
+    background: #a98467;
+    margin-top: 8px;
+}
+
+#deletePointBtn:hover{
+    background: rgba(108,88,76,1);
+}
+
+/* 按鈕 */
+.btn-group{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+button{
+    border: none;
+    padding: 13px 14px;
+    border-radius: 18px;
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(108,88,76,1);
+    color: #fefae0;
+    transition: 0.3s ease;
+}
+
+button:hover{
+    background: #a98467;
+    transform: translateY(-3px);
+}
+
+/* 右側畫布區 */
+.canvas-card{
+    background: #fefae0;
+    border-radius: 28px;
+    padding: 30px;
+    box-shadow: 0 10px 24px rgba(108,88,76,0.12);
+}
+
+.canvas-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    gap: 20px;
+}
+
+.canvas-top h2{
+    font-size: 30px;
+    color: rgba(108,88,76,1);
+}
+
+.today{
+    font-size: 16px;
+    color: rgba(108,88,76,0.82);
+}
+
+.canvas-box{
+    width: 100%;
+    background: #fffdf0;
+    border-radius: 24px;
+    padding: 18px;
+    overflow: hidden;
+}
+
+#lifeCanvas{
+    width: 100%;
+    height: 620px;
+    display: block;
+    border-radius: 20px;
+    background: #fffdf0;
+    cursor: crosshair;
+    touch-action: none;
+}
+
+/* 下面提醒 */
+.note{
+    width: 88%;
+    max-width: 1280px;
+    margin: -35px auto 60px;
+    padding: 22px 28px;
+    border-radius: 24px;
+    background: rgba(169,132,103,0.18);
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* footer */
+footer{
+    clear: both;
+    width: 100%;
+    padding: 25px 40px;
+    text-align: center;
+    color: rgba(108,88,76,1);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* 平板 */
+@media only screen and (max-width: 1100px){
+    nav a{
+        padding: 20px 16px;
+        font-size: 0.92em;
+    }
+
+    .trajectory-wrap{
+        grid-template-columns: 1fr;
+    }
+
+    #lifeCanvas{
+        height: 560px;
+    }
+}
+
+/* 手機版 */
+@media only screen and (max-width: 768px){
+
+    header{
+        height: auto;
+        min-height: 90px;
+        align-items: center;
+        background: rgba(240,234,210,1);
+    }
+
+    .logo{
+        width: 70px;
+    }
+
+    .nav-btn{
+        display: block;
+        padding: 25px 30px;
+        font-size: 36px;
+        color: rgba(108,88,76,1);
+        cursor: pointer;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    nav{
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        background: rgba(240,234,210,1);
+        text-align: center;
+    }
+
+    nav a{
+        display: block;
+        padding: 18px 0;
+        font-size: 1.1em;
+        border-top: 1px solid rgba(108,88,76,0.25);
+    }
+
+    #nav-toggle:checked ~ nav{
+        display: block;
+    }
+
+    .page-title{
+        width: 88%;
+        margin-top: 110px;
+        padding: 28px 24px;
+    }
+
+    .page-title h1{
+        font-size: 30px;
+    }
+
+    .page-title p{
+        font-size: 15px;
+    }
+
+    .steps-banner{
+        width: 88%;
+        margin: -20px auto 35px;
+        padding: 22px 20px;
+    }
+
+    .steps-banner h2{
+        font-size: 24px;
+    }
+
+    .steps-grid{
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .step-item{
+        font-size: 15px;
+    }
+
+    .trajectory-wrap{
+        width: 90%;
+        gap: 24px;
+    }
+
+    .tool-panel,
+    .canvas-card{
+        padding: 22px;
+    }
+
+    .canvas-top{
+        display: block;
+    }
+
+    .canvas-top h2{
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+
+    #lifeCanvas{
+        height: 460px;
+    }
+
+    .btn-group{
+        grid-template-columns: 1fr;
+    }
+
+    .note{
+        width: 90%;
+        font-size: 15px;
+    }
+}

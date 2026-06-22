@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+
+/* 基本設定 */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 1.2rem;
+    background: #f0ead2;
+    color: rgba(108,88,76,1);
+}
+
+/* header */
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgb(247,252,236);
+}
+
+/* logo */
+.logo{
+    width: 70px;
+    background: none;
+    margin-left: 0;
+}
+
+.logo img{
+    width: 100%;
+    display: block;
+}
+
+/* nav */
+nav{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
+
+    padding-right: 32px;
+    background: none;
+    white-space: nowrap;
+}
+
+nav a{
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    color: rgba(108,88,76,1);
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: transform 0.3s ease;
+    background: none;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    color: rgba(108,88,76,1);
+    font-weight: 800;
+    transform: scale(1.08);
+    background: none;
+}
+
+#nav-toggle{
+    display: none;
+}
+
+.nav-btn{
+    display: none;
+}
+
+/* 頁面標題 */
+.page-title{
+    width: 78%;
+    max-width: 1200px;
+    margin: 125px auto 35px;
+    text-align: center;
+
+    background: rgba(108,88,76,0.52);
+    padding: 34px 58px 28px;
+    border-radius: 32px;
+
+    animation: fadeUp 1.5s ease-out forwards;
+    opacity: 0;
+}
+.page-title p{
+    font-size: 20px;
+    line-height: 1.65;
+    color: rgba(108,88,76,1);
+    margin-bottom: 0;
+}
+
+/* 深咖啡色區塊內的小提醒 */
+.title-reminder{
+    max-width: 900px;
+    margin: 18px auto 0;
+    padding: 16px 24px;
+    border-radius: 24px;
+    background: rgba(169,132,103,0.16);
+
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(108,88,76,0.9);
+}
+
+/* 後測問卷按鈕 */
+.survey-btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 34px;
+
+    border-radius: 999px;
+    background: rgba(108,88,76,1);
+    color: #fefae0;
+
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    box-shadow: 0 8px 18px rgba(108,88,76,0.22);
+    transition: 0.3s ease;
+}
+
+.survey-btn:hover{
+    background: #a98467;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(108,88,76,0.28);
+}
+
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 主內容 */
+.resource-wrap{
+    width: 88%;
+    max-width: 1280px;
+    margin: 0 auto 70px;
+}
+
+.resource-section{
+    background: #fefae0;
+    border-radius: 28px;
+    padding: 32px;
+    margin-bottom: 34px;
+    box-shadow: 0 10px 24px rgba(108,88,76,0.12);
+}
+
+/* 區塊標題 */
+.section-heading{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 26px;
+}
+
+.section-heading span{
+    width: 48px;
+    height: 48px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: rgba(108,88,76,1);
+    color: #fefae0;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.section-heading h2{
+    font-size: 30px;
+    line-height: 1.4;
+}
+
+/* 網站卡片 */
+.resource-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.resource-card{
+    position: relative;
+    background: #fffdf0;
+    border-radius: 24px;
+    padding: 26px;
+    border: 2px solid rgba(108,88,76,0.08);
+    box-shadow: 0 8px 20px rgba(108,88,76,0.08);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: 0.35s ease;
+}
+
+.resource-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(108,88,76,0.16);
+}
+
+.card-tag{
+    display: inline-block;
+    align-self: flex-start;
+
+    background: rgba(169,132,103,0.22);
+    padding: 7px 14px;
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.resource-card h3{
+    font-size: 24px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+}
+
+.resource-card p{
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.resource-card a{
+    display: inline-block;
+    align-self: flex-start;
+
+    padding: 12px 22px;
+    border-radius: 30px;
+
+    background: rgba(108,88,76,1);
+    color: #fefae0;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+
+    transition: 0.3s ease;
+}
+
+.resource-card a:hover{
+    background: #a98467;
+    transform: translateY(-3px);
+}
+
+/* 手冊卡片 */
+.manual-grid{
+    display: grid;
+    gap: 22px;
+}
+
+.manual-card{
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 20px;
+
+    background: #fffdf0;
+    border-radius: 24px;
+    padding: 26px;
+    border: 2px solid rgba(108,88,76,0.08);
+    box-shadow: 0 8px 20px rgba(108,88,76,0.08);
+}
+
+.manual-number{
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: rgba(108,88,76,1);
+    color: #fefae0;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.manual-content h3{
+    font-size: 24px;
+    line-height: 1.45;
+    margin-bottom: 8px;
+}
+
+.manual-content h4{
+    font-size: 17px;
+    margin-bottom: 14px;
+    color: rgba(108,88,76,0.78);
+}
+
+.manual-content p{
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+/* 下載按鈕 */
+.download-btn{
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 22px;
+
+    border-radius: 30px;
+    background: rgba(108,88,76,1);
+    color: #fefae0;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+
+    transition: 0.3s ease;
+}
+
+.download-btn:hover{
+    background: #a98467;
+    transform: translateY(-3px);
+}
+
+/* 下方提醒 */
+.note{
+    width: 88%;
+    max-width: 1280px;
+    margin: -35px auto 60px;
+    padding: 22px 28px;
+    border-radius: 24px;
+    background: rgba(169,132,103,0.18);
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* footer */
+footer{
+    clear: both;
+    width: 100%;
+    padding: 25px 40px;
+    text-align: center;
+    color: rgba(108,88,76,1);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* 平板 */
+@media only screen and (max-width: 1100px){
+    nav{
+        gap: 14px;
+    }
+
+    nav a{
+        font-size: 0.88em;
+    }
+
+    .resource-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 手機版 */
+@media only screen and (max-width: 768px){
+
+    header{
+        height: auto;
+        min-height: 90px;
+        align-items: center;
+        background: rgba(240,234,210,1);
+    }
+
+    .logo{
+        width: 70px;
+    }
+
+    .nav-btn{
+        display: block;
+        padding: 25px 30px;
+        font-size: 36px;
+        color: rgba(108,88,76,1);
+        cursor: pointer;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    nav{
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        background: rgba(240,234,210,1);
+        text-align: center;
+        white-space: normal;
+    }
+
+    nav a{
+        display: block;
+        padding: 18px 0;
+        font-size: 1.1em;
+        border-top: 1px solid rgba(108,88,76,0.25);
+    }
+
+    #nav-toggle:checked ~ nav{
+        display: block;
+    }
+
+    .page-title{
+        width: 88%;
+        margin-top: 110px;
+        padding: 26px 22px 24px;
+    }
+
+    .page-title h1{
+        font-size: 30px;
+    }
+
+    .page-title p{
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .title-reminder{
+        margin-top: 14px;
+        padding: 14px 16px;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .survey-btn{
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        padding: 13px 20px;
+        margin-top: 18px;
+    }
+
+    .resource-wrap{
+        width: 90%;
+    }
+
+    .resource-section{
+        padding: 24px 20px;
+    }
+
+    .section-heading{
+        align-items: flex-start;
+    }
+
+    .section-heading span{
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+        flex: 0 0 42px;
+    }
+
+    .section-heading h2{
+        font-size: 24px;
+    }
+
+    .resource-card{
+        padding: 22px;
+    }
+
+    .resource-card h3{
+        font-size: 21px;
+    }
+
+    .resource-card p{
+        font-size: 15px;
+    }
+
+    .manual-card{
+        grid-template-columns: 1fr;
+        padding: 22px;
+    }
+
+    .manual-number{
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .manual-content h3{
+        font-size: 21px;
+    }
+
+    .manual-content p{
+        font-size: 15px;
+    }
+
+    .download-btn{
+        width: 100%;
+        text-align: center;
+    }
+
+    .note{
+        width: 90%;
+        font-size: 15px;
+    }
+}

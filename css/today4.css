@@ -1,0 +1,886 @@
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+
+/* 基本設定 */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    overflow-x: hidden;
+}
+
+body{
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 1.2rem;
+    background: #f0ead2;
+    color: rgba(108,88,76,1);
+}
+
+/* header */
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgb(247,252,236);
+}
+
+/* logo */
+.logo{
+    width: 70px;
+    background: none;
+    margin-left: 0;
+}
+
+.logo img{
+    width: 100%;
+    display: block;
+}
+
+/* nav */
+nav{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+
+    padding-right: 36px;
+    background: none;
+
+    white-space: nowrap;
+}
+
+nav a{
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    color: rgba(108,88,76,1);
+    font-weight: bold;
+    font-size: 1.05em;
+    transition: transform 0.3s ease;
+    background: none;
+}
+nav a:hover{
+    text-decoration: underline;
+    color: rgba(108,88,76,1);
+    font-weight: 800;
+    transform: scale(1.08);
+    background: none;
+}
+
+/* 隱藏 checkbox */
+#nav-toggle{
+    display: none;
+}
+
+/* 桌機版不顯示三條線 */
+.nav-btn{
+    display: none;
+}
+
+/* 頁面標題區 */
+.page-title{
+    width: 78%;
+    max-width: 1200px;
+    margin: 125px auto 45px;
+    text-align: center;
+
+    background: rgba(108,88,76,0.52);
+    padding: 34px 58px;
+    border-radius: 32px;
+
+    animation: fadeUp 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+.page-title h1{
+    margin: 0 0 16px;
+    font-size: 42px;
+    color: rgba(108,88,76,1);
+
+    animation-name: fadeUp;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    opacity: 0;
+}
+
+.page-title p{
+    margin: 0 auto;
+    max-width: 980px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: rgba(108,88,76,1);
+
+    animation-name: fadeUp;
+    animation-duration: 1.6s;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    opacity: 0;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 操作說明 */
+.guide-box{
+    width: 82%;
+    max-width: 1350px;
+    margin: 0 auto 34px;
+
+    background: #fefae0;
+    border-radius: 26px;
+    padding: 26px 38px;
+    box-shadow: 0 8px 20px rgba(108,88,76,0.10);
+}
+
+.guide-box h2{
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.guide-box p{
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.mobile-tip{
+    margin-top: 8px;
+    font-weight: bold;
+    color: #8b5e3c;
+}
+
+/* 顏色圖例 */
+.legend-area{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(108,88,76,0.18);
+}
+
+.legend-item{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.legend-dot{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+/* 主遊戲布局 */
+.tree-game-layout{
+    width: 88%;
+    max-width: 1450px;
+    margin: 0 auto 50px;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.35fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* 左側牌卡面板 */
+.card-panel{
+    background: #fefae0;
+    border-radius: 28px;
+    padding: 26px;
+    box-shadow: 0 10px 24px rgba(108,88,76,0.12);
+
+    position: sticky;
+    top: 125px;
+}
+
+.panel-title{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.panel-title h2,
+.tree-title h2{
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.panel-title p,
+.tree-title p{
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 自訂牌卡 */
+.custom-card-area{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.custom-card-area input{
+    width: 100%;
+    border: 2px solid rgba(108,88,76,0.25);
+    border-radius: 999px;
+    padding: 12px 16px;
+    background: white;
+    color: rgba(108,88,76,1);
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 15px;
+    outline: none;
+}
+
+.custom-card-area input:focus{
+    border-color: rgba(108,88,76,0.85);
+}
+
+.custom-card-area button{
+    border: none;
+    border-radius: 999px;
+    padding: 12px 18px;
+    background: rgba(108,88,76,1);
+    color: #fefae0;
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.custom-card-area button:hover{
+    background: #a98467;
+    transform: translateY(-2px);
+}
+
+/* 牌卡區 */
+.card-bank{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-height: 680px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+/* 關係牌卡 */
+.relation-card{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 88px;
+    padding: 12px 18px;
+
+    color: #fff;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: grab;
+    user-select: none;
+
+    transition: 0.25s ease;
+    box-shadow: 0 4px 10px rgba(108,88,76,0.18);
+}
+
+.relation-card:hover{
+    filter: brightness(1.08);
+    transform: translateY(-4px);
+}
+
+.relation-card:active{
+    cursor: grabbing;
+}
+
+.relation-card.selected{
+    outline: 4px solid rgba(255,255,255,0.75);
+    transform: translateY(-4px);
+}
+
+/* 分類顏色 */
+.cat-family{
+    background: #bc6c25;
+}
+
+.cat-partner{
+    background: #9c6644;
+}
+
+.cat-children{
+    background: #7f5539;
+}
+
+.cat-relative{
+    background: #b08968;
+}
+
+.cat-friend{
+    background: #6b8e23;
+}
+
+.cat-professional{
+    background: #4f772d;
+}
+
+.cat-self{
+    background: #6c584c;
+}
+
+/* 右側生命樹區 */
+.tree-panel{
+    background: rgba(254,250,224,0.75);
+    border-radius: 30px;
+    padding: 28px;
+    box-shadow: 0 10px 24px rgba(108,88,76,0.10);
+}
+
+.tree-title{
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* 生命樹整體 */
+.tree-area{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 每一層 */
+.tree-layer{
+    background: #fefae0;
+    border-radius: 26px;
+    padding: 22px 24px;
+    box-shadow: 0 6px 16px rgba(108,88,76,0.10);
+    border-left: 12px solid rgba(108,88,76,0.55);
+    transition: 0.3s ease;
+}
+
+.tree-layer:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(108,88,76,0.16);
+}
+
+/* 不同層次顏色 */
+.layer-1{
+    border-left-color: #ccd5ae;
+}
+
+.layer-2{
+    border-left-color: #d4a373;
+}
+
+.layer-3{
+    border-left-color: #a98467;
+}
+
+.layer-4{
+    border-left-color: #8b5e3c;
+}
+
+.layer-5{
+    border-left-color: #6c584c;
+}
+
+/* 層次問題 */
+.layer-question{
+    margin-bottom: 14px;
+}
+
+.layer-number{
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 5px 14px;
+
+    background: rgba(108,88,76,1);
+    color: #fefae0;
+
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.layer-question h3{
+    font-size: 21px;
+    line-height: 1.5;
+}
+
+/* 拖放區 */
+.drop-zone{
+    min-height: 72px;
+    padding: 14px;
+    border-radius: 18px;
+
+    background: rgba(240,234,210,0.95);
+    border: 2px dashed rgba(108,88,76,0.35);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+
+    transition: 0.25s ease;
+}
+
+.drop-zone.drag-over{
+    background: rgba(204,213,174,0.55);
+    border-color: rgba(108,88,76,0.9);
+    transform: scale(1.01);
+}
+
+/* 已放入層次中的小牌卡 */
+.selected-chip{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 14px;
+    border-radius: 999px;
+
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.remove-chip{
+    width: 22px;
+    height: 22px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: rgba(254,250,224,0.28);
+    color: #fff;
+
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.remove-chip:hover{
+    background: #fefae0;
+    color: rgba(108,88,76,1);
+}
+
+/* 結果區 */
+.result-section{
+    width: 88%;
+    max-width: 1200px;
+    margin: 0 auto 70px;
+
+    background: #fefae0;
+    border-radius: 30px;
+    padding: 34px;
+    box-shadow: 0 10px 24px rgba(108,88,76,0.12);
+    text-align: center;
+}
+
+.result-section h2{
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.result-section p{
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.result-buttons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.result-buttons button{
+    border: none;
+    border-radius: 999px;
+    padding: 14px 24px;
+
+    background: rgba(108,88,76,1);
+    color: #fefae0;
+
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.result-buttons button:hover{
+    background: #a98467;
+    transform: translateY(-3px);
+}
+
+#resultText{
+    width: 100%;
+    min-height: 240px;
+    padding: 20px;
+
+    border: 2px solid rgba(108,88,76,0.25);
+    border-radius: 20px;
+    resize: vertical;
+
+    background: white;
+    color: rgba(108,88,76,1);
+
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* 圖片輸出區：隱藏在畫面外，但 html2canvas 仍可截圖 */
+.capture-area{
+    position: absolute;
+    left: -9999px;
+    top: 0;
+
+    width: 1000px;
+    padding: 36px;
+    border-radius: 24px;
+
+    background: #fffaf0;
+    text-align: left;
+    box-shadow: none;
+}
+
+.capture-header{
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.capture-header h3{
+    font-size: 28px;
+    color: rgba(108,88,76,1);
+    margin-bottom: 8px;
+}
+
+.capture-header p{
+    font-size: 16px;
+    color: rgba(108,88,76,0.85);
+    margin-bottom: 0;
+}
+.capture-date{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(108,88,76,0.9);
+    margin-bottom: 10px;
+}
+.capture-content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.capture-block{
+    background: #fefae0;
+    border-radius: 20px;
+    padding: 18px 20px;
+    border-left: 8px solid #a98467;
+}
+
+.capture-block h4{
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: rgba(108,88,76,1);
+    line-height: 1.6;
+}
+
+.capture-chip-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.capture-chip{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.capture-empty{
+    color: rgba(108,88,76,0.7);
+    font-size: 15px;
+}
+
+/* 下一頁 */
+.next-area{
+    margin-top: 28px;
+}
+
+.next-btn{
+    display: inline-block;
+    padding: 16px 42px;
+
+    background: #a98467;
+    color: #fefae0;
+    text-decoration: none;
+
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: bold;
+
+    transition: 0.35s ease;
+}
+
+.next-btn:hover{
+    background: rgba(108,88,76,1);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 22px rgba(108,88,76,0.25);
+}
+
+/* footer */
+footer{
+    clear: both;
+    width: 100%;
+    padding: 20px 40px;
+    text-align: center;
+    color: rgba(108,88,76,1);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* 平板 */
+@media only screen and (max-width: 1200px){
+
+    nav{
+        padding-right: 20px;
+    }
+
+    nav a{
+        padding: 20px 12px;
+        font-size: 0.85em;
+    }
+
+    .page-title,
+    .guide-box{
+        width: 88%;
+    }
+
+    .tree-game-layout{
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+
+    .card-panel{
+        position: static;
+    }
+
+    .card-bank{
+        max-height: none;
+    }
+}
+
+/* 手機 */
+@media only screen and (max-width: 768px){
+
+    header{
+        height: auto;
+        min-height: 90px;
+        align-items: center;
+        background: rgba(240,234,210,1);
+    }
+
+    .logo{
+        width: 70px;
+    }
+
+    .nav-btn{
+        display: block;
+        padding: 25px 30px;
+        font-size: 36px;
+        color: rgba(108,88,76,1);
+        cursor: pointer;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    nav{
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        background: rgba(240,234,210,1);
+        text-align: center;
+    }
+
+    nav a{
+        display: block;
+        padding: 18px 0;
+        font-size: 1.1em;
+        border-top: 1px solid rgba(108,88,76,0.25);
+    }
+
+    #nav-toggle:checked ~ nav{
+        display: block;
+    }
+
+    .page-title{
+        width: 90%;
+        margin-top: 130px;
+        padding: 26px 24px;
+    }
+
+    .page-title h1{
+        font-size: 28px;
+    }
+
+    .page-title p{
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .guide-box{
+        width: 90%;
+        padding: 24px 22px;
+    }
+
+    .guide-box h2{
+        font-size: 22px;
+    }
+
+    .guide-box p{
+        font-size: 15px;
+    }
+
+    .legend-item{
+        font-size: 13px;
+    }
+
+    .tree-game-layout{
+        width: 90%;
+        gap: 24px;
+    }
+
+    .card-panel,
+    .tree-panel,
+    .result-section{
+        padding: 22px;
+        border-radius: 24px;
+    }
+
+    .panel-title h2,
+    .tree-title h2,
+    .result-section h2{
+        font-size: 26px;
+    }
+
+    .custom-card-area{
+        grid-template-columns: 1fr;
+    }
+
+    .relation-card{
+        min-width: auto;
+        font-size: 15px;
+        padding: 10px 15px;
+    }
+
+    .tree-layer{
+        padding: 20px 18px;
+        border-left-width: 8px;
+    }
+
+    .layer-question h3{
+        font-size: 17px;
+    }
+
+    .drop-zone{
+        min-height: 80px;
+        padding: 12px;
+    }
+
+    .selected-chip{
+        font-size: 14px;
+    }
+
+    .result-buttons{
+        flex-direction: column;
+    }
+
+    .result-buttons button{
+        width: 100%;
+    }
+
+    #resultText{
+        min-height: 260px;
+        font-size: 15px;
+    }
+
+    .capture-area{
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    width: 1000px;
+    padding: 36px;
+    border-radius: 24px;
+}
+
+    .capture-header h3{
+        font-size: 22px;
+    }
+
+    .capture-header p{
+        font-size: 14px;
+    }
+
+    .capture-block{
+        padding: 16px;
+    }
+
+    .capture-block h4{
+        font-size: 16px;
+    }
+
+    .capture-chip{
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .next-btn{
+        width: 100%;
+        font-size: 16px;
+    }
+
+    footer{
+        font-size: 12px;
+        padding: 18px 24px;
+    }
+}

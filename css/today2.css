@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+
+/* 基本設定 */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    overflow-x: hidden;
+}
+
+body{
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 1.2rem;
+    background: #f0ead2;
+}
+
+/* header：和首頁 NAV 一樣 */
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgb(247,252,236);
+}
+
+/* logo */
+.logo{
+    width: 70px;
+    background: none;
+    margin-left: 0;
+}
+
+.logo img{
+    width: 100%;
+    display: block;
+}
+
+nav{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+
+    padding-right: 36px;
+    background: none;
+
+    white-space: nowrap;
+}
+
+nav a{
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    color: rgba(108,88,76,1);
+    font-weight: bold;
+    font-size: 1.05em;
+    transition: transform 0.3s ease;
+    background: none;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    color: rgba(108,88,76,1);
+    font-weight: 800;
+    transform: scale(1.08);
+    background: none;
+}
+
+/* 隱藏 checkbox */
+#nav-toggle{
+    display: none;
+}
+
+/* 桌機版不顯示三條線 */
+.nav-btn{
+    display: none;
+}
+
+/* 頁面標題區 */
+.page-title{
+    width: 78%;
+    max-width: 1200px;
+    margin: 115px auto 45px;
+    text-align: center;
+
+    background: rgba(108,88,76,0.52);
+    padding: 34px 58px;
+    border-radius: 32px;
+
+    animation: fadeUp 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+.page-title h1{
+    margin: 0 0 16px;
+    font-size: 42px;
+    color: rgba(108,88,76,1);
+
+    animation-name: fadeUp;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    opacity: 0;
+}
+
+.page-title p{
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.8;
+    color: rgba(108,88,76,1);
+
+    animation-name: fadeUp;
+    animation-duration: 1.8s;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    opacity: 0;
+}
+
+/* 動畫設定 */
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 主版面：左邊身體圖，右邊器材列表 */
+.medical-layout{
+    width: 85%;
+    margin: 0 auto 40px;
+
+    display: grid;
+    grid-template-columns: 1fr 1.45fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* 左側身體圖 */
+.body-section{
+    background: rgba(240,234,210,1);
+    padding: 25px;
+    height: 100%;
+}
+
+.body-section img{
+    width: 100%;
+    height: 760px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* 右側器材區：總高度跟左邊貓咪一樣 */
+.device-section{
+    height: 760px;
+
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 14px;
+}
+
+/* fancybox 點擊連結 */
+.device-link{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    min-height: 0;
+    height: 100%;
+}
+
+/* 每一張器材卡片：固定在右側總高度內 */
+.device-section article{
+    display: grid;
+    grid-template-columns: 235px 1fr;
+    gap: 20px;
+    align-items: center;
+
+    height: 100%;
+    min-height: 0;
+    padding: 14px 22px;
+
+    background: #fefae0;
+    border-radius: 24px;
+    transition: 0.4s ease;
+
+    overflow: hidden;
+}
+
+/* 器材圖片：圖片放大，但不撐爆卡片 */
+.device-section article img{
+    width: 100%;
+    height: 142px;
+    object-fit: contain;
+    display: block;
+}
+
+/* 右側文字外層：避免文字把卡片撐爆 */
+.device-text{
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* 右側文字標題 */
+.device-text h2{
+    margin: 0 0 6px;
+    font-size: 21px;
+    line-height: 1.22;
+    color: rgba(108,88,76,1);
+}
+
+/* 右側文字內文 */
+.device-text p{
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.45;
+    color: rgba(108,88,76,1);
+}
+
+/* hover 效果 */
+.device-section article:hover{
+    background: #a98467;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(108,88,76,0.25);
+    cursor: pointer;
+}
+
+.device-section article:hover h2,
+.device-section article:hover p{
+    color: #fefae0;
+}
+
+/* fancybox 跳出說明外框：修正版 */
+.device-popup{
+    width: auto;
+    max-width: 90vw;
+    height: auto;
+    max-height: 86vh;
+
+    padding: 24px;
+    background: rgba(240,234,210,1);
+    color: rgba(108,88,76,1);
+    line-height: 1.8;
+    border-radius: 18px;
+    font-family: "Chiron GoRound TC", sans-serif;
+
+    overflow: hidden;
+    text-align: center;
+}
+
+/* fancybox 裡面的圖片：置中、等比例縮小、不拖曳 */
+.device-popup img{
+    display: block;
+
+    max-width: 86vw;
+    max-height: 78vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* 讓 fancybox 跳出視窗蓋在 NAV 上面 */
+.fancybox-overlay{
+    z-index: 99999 !important;
+}
+
+.fancybox-wrap{
+    z-index: 100000 !important;
+}
+
+/* fancybox 外框置中 */
+.fancybox-skin,
+.fancybox-outer{
+    text-align: center !important;
+    background: transparent !important;
+}
+
+/* 防止 fancybox 內部出現水平拖曳條 */
+.fancybox-inner{
+    overflow: hidden !important;
+    text-align: center !important;
+}
+
+/* 如果你是直接點圖片開大圖，這段會生效 */
+.fancybox-image{
+    display: block !important;
+
+    max-width: 86vw !important;
+    max-height: 78vh !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    object-fit: contain !important;
+    margin: 0 auto !important;
+}
+
+/* footer */
+footer{
+    clear: both;
+    width: 100%;
+    padding: 20px 40px;
+    text-align: center;
+    color: rgba(108,88,76,1);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* 平板 */
+@media only screen and (max-width: 1200px){
+
+    nav{
+        padding-right: 20px;
+    }
+
+    nav a{
+        padding: 20px 18px;
+        font-size: 0.95em;
+    }
+
+    .medical-layout{
+        width: 90%;
+        grid-template-columns: 1fr 1.35fr;
+        gap: 24px;
+    }
+
+    .device-section{
+        height: 760px;
+        gap: 14px;
+    }
+
+    .device-section article{
+        grid-template-columns: 210px 1fr;
+        gap: 18px;
+        padding: 14px 18px;
+    }
+
+    .device-section article img{
+        height: 130px;
+    }
+
+    .device-text h2{
+        font-size: 19px;
+        line-height: 1.22;
+    }
+
+    .device-text p{
+        font-size: 13.5px;
+        line-height: 1.45;
+    }
+}
+
+/* RWD：螢幕變小才出現三條線 */
+@media only screen and (max-width: 768px){
+
+    header{
+        height: auto;
+        min-height: 90px;
+        align-items: center;
+        background: rgba(240,234,210,1);
+    }
+
+    .logo{
+        width: 70px;
+    }
+
+    .nav-btn{
+        display: block;
+        padding: 25px 30px;
+        font-size: 36px;
+        color: rgba(108,88,76,1);
+        cursor: pointer;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    nav{
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        background: rgba(240,234,210,1);
+        text-align: center;
+    }
+
+    nav a{
+        display: block;
+        padding: 18px 0;
+        font-size: 1.1em;
+        border-top: 1px solid rgba(108,88,76,0.25);
+    }
+
+    #nav-toggle:checked ~ nav{
+        display: block;
+    }
+
+    .page-title{
+        width: 88%;
+        margin-top: 130px;
+        padding: 26px 24px;
+    }
+
+    .page-title h1{
+        font-size: 26px;
+    }
+
+    .page-title p{
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .medical-layout{
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .body-section{
+        padding: 10px;
+    }
+
+    .body-section img{
+        height: 420px;
+    }
+
+    .device-section{
+        height: auto;
+        display: grid;
+        grid-template-rows: none;
+        gap: 24px;
+    }
+
+    .device-link{
+        height: auto;
+    }
+
+    .device-section article{
+        grid-template-columns: 1fr;
+        text-align: center;
+        min-height: auto;
+        height: auto;
+        padding: 28px 22px;
+        overflow: visible;
+    }
+
+    .device-section article img{
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .device-text{
+        overflow: visible;
+    }
+
+    .device-text h2{
+        margin: 0 0 8px;
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    .device-text p{
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .device-popup{
+        width: auto;
+        max-width: 90vw;
+        max-height: 84vh;
+        padding: 16px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .device-popup img{
+        max-width: 82vw;
+        max-height: 76vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    .fancybox-image{
+        max-width: 82vw !important;
+        max-height: 76vh !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        margin: 0 auto !important;
+    }
+}

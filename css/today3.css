@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+
+/* 基本設定 */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    overflow-x: hidden;
+}
+
+body{
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 1.2rem;
+    background: #f0ead2;
+    color: rgba(108,88,76,1);
+}
+
+/* header：和首頁 NAV 一樣 */
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgb(247,252,236);
+}
+
+/* logo */
+.logo{
+    width: 70px;
+    background: none;
+    margin-left: 0;
+}
+
+.logo img{
+    width: 100%;
+    display: block;
+}
+
+nav{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+
+    padding-right: 36px;
+    background: none;
+
+    white-space: nowrap;
+}
+
+nav a{
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    color: rgba(108,88,76,1);
+    font-weight: bold;
+    font-size: 1.05em;
+    transition: transform 0.3s ease;
+    background: none;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    color: rgba(108,88,76,1);
+    font-weight: 800;
+    transform: scale(1.08);
+    background: none;
+}
+
+/* 隱藏 checkbox */
+#nav-toggle{
+    display: none;
+}
+
+/* 桌機版不顯示三條線 */
+.nav-btn{
+    display: none;
+}
+
+/* 頁面標題區 */
+.page-title{
+    width: 78%;
+    max-width: 1200px;
+    margin: 115px auto 45px;
+    text-align: center;
+
+    background: rgba(108,88,76,0.52);
+    padding: 34px 58px;
+    border-radius: 32px;
+
+    animation: fadeUp 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+.page-title h1{
+    margin: 0 0 16px;
+    font-size: 42px;
+    color: rgba(108,88,76,1);
+
+    animation-name: fadeUp;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    opacity: 0;
+}
+
+.page-title p{
+    margin: 0 auto;
+    max-width: 980px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: rgba(108,88,76,1);
+
+    animation-name: fadeUp;
+    animation-duration: 1.8s;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    opacity: 0;
+}
+
+/* 動畫設定 */
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 左右兩半版面 */
+.intro-layout{
+    width: 88%;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 32px;
+    align-items: start;
+}
+
+/* 左半 */
+.intro-left{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* 資訊卡片 */
+.info-card{
+    background: #fefae0;
+    border-radius: 24px;
+    padding: 28px 34px;
+    box-shadow: 0 8px 20px rgba(108,88,76,0.10);
+    transition: 0.35s ease;
+}
+
+.info-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(108,88,76,0.16);
+}
+
+.info-card h2{
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: rgba(108,88,76,1);
+}
+
+.info-card p{
+    font-size: 18px;
+    line-height: 1.9;
+    color: rgba(108,88,76,1);
+}
+
+/* 第一張研究邀請卡片 */
+.main-invite-card{
+    background: rgba(108,88,76,0.16);
+}
+
+.main-invite-card h2{
+    font-size: 30px;
+}
+
+.main-invite-card p{
+    margin-bottom: 12px;
+}
+
+.main-invite-card p:last-child{
+    margin-bottom: 0;
+}
+
+.contact-card p{
+    line-height: 2;
+}
+
+/* 問卷按鈕區 */
+.start-area{
+    margin-top: 8px;
+    padding: 34px 28px;
+    text-align: center;
+    background: rgba(108,88,76,0.16);
+    border-radius: 28px;
+}
+
+.start-area p{
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 24px;
+    color: rgba(108,88,76,1);
+}
+
+/* 兩個同意按鈕外層 */
+.btn-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+/* 按鈕共用樣式 */
+.start-btn{
+    display: inline-block;
+    padding: 18px 36px;
+    color: #fefae0;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+    border-radius: 999px;
+    transition: 0.35s ease;
+    min-width: 280px;
+}
+
+/* 紙本問卷按鈕 */
+.paper-btn{
+    background: rgba(108,88,76,1);
+}
+
+/* 電子問卷按鈕 */
+.online-btn{
+    background: #a98467;
+}
+
+.paper-btn:hover,
+.online-btn:hover{
+    background: rgba(72,54,43,1);
+    color: #fefae0;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 22px rgba(108,88,76,0.25);
+}
+
+/* 右半 */
+.intro-right{
+    position: sticky;
+    top: 130px;
+}
+
+/* 海報框 */
+.poster-box{
+    background: #fefae0;
+    border-radius: 28px;
+    padding: 22px;
+    box-shadow: 0 10px 24px rgba(108,88,76,0.12);
+}
+
+.poster-box img{
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+}
+
+/* footer */
+footer{
+    clear: both;
+    width: 100%;
+    padding: 20px 40px;
+    text-align: center;
+    color: rgba(108,88,76,1);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* 平板 */
+@media only screen and (max-width: 1200px){
+
+    nav{
+        padding-right: 20px;
+    }
+
+    nav a{
+        padding: 20px 18px;
+        font-size: 0.95em;
+    }
+
+    .page-title{
+        width: 88%;
+        padding: 30px 34px;
+    }
+
+    .page-title h1{
+        font-size: 36px;
+    }
+
+    .page-title p{
+        font-size: 18px;
+    }
+
+    .intro-layout{
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .intro-right{
+        position: static;
+    }
+}
+
+/* 手機版 */
+@media only screen and (max-width: 768px){
+
+    header{
+        height: auto;
+        min-height: 90px;
+        align-items: center;
+        background: rgba(240,234,210,1);
+    }
+
+    .logo{
+        width: 70px;
+    }
+
+    .nav-btn{
+        display: block;
+        padding: 25px 30px;
+        font-size: 36px;
+        color: rgba(108,88,76,1);
+        cursor: pointer;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    nav{
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        background: rgba(240,234,210,1);
+        text-align: center;
+    }
+
+    nav a{
+        display: block;
+        padding: 18px 0;
+        font-size: 1.1em;
+        border-top: 1px solid rgba(108,88,76,0.25);
+    }
+
+    #nav-toggle:checked ~ nav{
+        display: block;
+    }
+
+    .page-title{
+        width: 90%;
+        margin-top: 130px;
+        padding: 24px 22px;
+    }
+
+    .page-title h1{
+        font-size: 28px;
+    }
+
+    .page-title p{
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .intro-layout{
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 50px;
+    }
+
+    .info-card{
+        padding: 24px 22px;
+        border-radius: 22px;
+    }
+
+    .info-card h2{
+        font-size: 22px;
+    }
+
+    .info-card p{
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .main-invite-card h2{
+        font-size: 23px;
+    }
+
+    .start-area{
+        padding: 28px 20px;
+    }
+
+    .start-area p{
+        font-size: 15px;
+    }
+
+    .btn-group{
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .start-btn{
+        width: 100%;
+        min-width: 0;
+        padding: 16px 20px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .poster-box{
+        padding: 16px;
+        border-radius: 22px;
+    }
+
+    footer{
+        font-size: 12px;
+        padding: 18px 24px;
+    }
+}

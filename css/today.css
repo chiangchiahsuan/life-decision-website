@@ -1,0 +1,468 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+
+/* 基本設定 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 1.2rem;
+    background: rgba(240, 234, 210, 1);
+}
+
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 200000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(247, 252, 236, 1);
+}
+
+.logo {
+    width: 90px;
+    background: none;
+}
+
+.logo img {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+/* 隱藏 checkbox */
+#nav-toggle {
+    display: none;
+}
+
+/* 桌機版不要顯示三條線 */
+.nav-btn {
+    display: none;
+}
+
+/* 桌機版 nav */
+nav{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+
+    padding-right: 36px;
+    background: none;
+
+    white-space: nowrap;
+}
+
+nav a{
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    color: rgba(108,88,76,1);
+    font-weight: bold;
+    font-size: 1.05em;
+    transition: transform 0.3s ease;
+    background: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: rgba(108, 88, 76, 1);
+    font-weight: 800;
+    transform: scale(1.12);
+}
+
+/* hero */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(65%) brightness(100%);
+}
+
+/* hero 文字區 */
+.hero_text {
+    position: absolute;
+    top: 18%;
+    left: 3%;
+    z-index: 10;
+
+    background: rgba(240, 234, 210, 0.55);
+    padding: 30px 40px;
+    border-radius: 20px;
+
+    color: rgba(108, 88, 76, 1);
+    opacity: 0;
+
+    animation-name: ant;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.hero_text h1 {
+    font-size: 90px;
+    margin: 0 0 20px 0;
+    color: rgba(108, 88, 76, 1);
+}
+
+.hero_text p {
+    font-size: 20px;
+    color: rgba(108, 88, 76, 0.85);
+    margin: 0;
+}
+
+/* hero 文字動畫 */
+@keyframes ant {
+    from {
+        top: 0%;
+        opacity: 0;
+    }
+
+    to {
+        top: 18%;
+        opacity: 1;
+    }
+}
+
+/* swiper 箭頭與點點 */
+.swiper-button-next,
+.swiper-button-prev {
+    color: rgba(108, 88, 76, 1);
+}
+
+.swiper-pagination-bullet-active {
+    background: rgba(108, 88, 76, 1);
+}
+
+/* section 標題 */
+section h1 {
+    color: rgba(108, 88, 76, 1);
+    text-align: center;
+}
+
+/* article */
+article {
+    clear: both;
+    width: 80%;
+    height: 350px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+article:hover {
+    cursor: pointer;
+}
+
+.a_left {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.a_left a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.a_left img {
+    float: left;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.moreb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	
+    background: rgba(108, 88, 76, 1);
+    padding: 30px;
+    color: rgba(240, 234, 210, 1);
+
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+article:hover .moreb {
+    opacity: 1;
+}
+
+.a_right {
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 50px;
+	
+    color: rgba(240, 234, 210, 1);
+    background: rgba(169, 132, 103, 0.8);
+    text-align: left;
+
+    transition: color 1.5s ease-in-out, background 0.5s ease-in-out;
+}
+
+article:hover .a_right {
+    background: rgba(169, 132, 103, 1);
+    color: rgba(240, 234, 210, 0.8);
+}
+
+/* More Details 區塊 */
+.more-detail {
+    width: 100%;
+    padding: 30px 0 60px;
+    background: rgba(240, 234, 210, 1);
+}
+
+/* More Details 標題 */
+.detailtitle {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    margin: 55px 0 55px;
+    color: rgba(108, 88, 76, 1);;
+}
+
+/* 四張圖片外層：桌機四張平行 */
+.detail-images {
+    width: 94%;
+    max-width: 1800px;
+    margin: 0 auto 80px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 54px;
+}
+
+/* 單張圖片盒子 */
+.s_img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* 圖片 */
+.s_img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 24px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.s_img img{
+    width: 100%;
+    display: block;
+}
+
+/* More Details 的按鈕：預設隱藏 */
+.s_img_bt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: rgba(108, 88, 76, 0.95);
+    color: rgba(240, 234, 210, 1);
+
+    padding: 22px 32px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    z-index: 5;
+    opacity: 0;
+
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* 滑鼠移到圖片時，more 才出現 */
+.s_img:hover .s_img_bt {
+    opacity: 1;
+}
+
+/* 滑鼠移到圖片時，圖片微放大 */
+.s_img:hover img {
+    transform: scale(1.08);
+}
+
+/* footer */
+footer {
+    clear: both;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: rgba(108, 88, 76, 1);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 平板版 */
+@media only screen and (max-width: 1024px) {
+    nav a {
+        padding: 20px 24px;
+        font-size: 1em;
+    }
+
+    .hero_text h1 {
+        font-size: 64px;
+    }
+
+    .detail-images {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px;
+        width: 88%;
+    }
+}
+
+/* 手機版 */
+@media only screen and (max-width: 768px) {
+
+    header {
+        align-items: center;
+        background: rgba(240, 234, 210, 0.92);
+    }
+
+    .logo {
+        width: 90px;
+    }
+
+    .nav-btn {
+        display: block;
+        padding: 25px 30px;
+        font-size: 36px;
+        color: rgba(108, 88, 76, 1);
+        cursor: pointer;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        background: rgba(240, 234, 210, 0.98);
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        padding: 18px 0;
+        font-size: 1.1em;
+        border-top: 1px solid rgba(108, 88, 76, 0.25);
+    }
+
+    #nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+    .hero {
+        height: 520px;
+        margin-top: 100px;
+    }
+
+    .hero_text {
+        top: 25%;
+        left: 5%;
+        right: 5%;
+        padding: 20px;
+    }
+
+    .hero_text h1 {
+        font-size: 42px;
+    }
+
+    .hero_text p {
+        font-size: 16px;
+        line-height: 1.6em;
+    }
+
+    article {
+        width: 90%;
+        height: auto;
+    }
+
+    .a_left,
+    .a_right {
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .a_left {
+        height: 260px;
+    }
+
+    .a_right {
+        padding: 30px;
+    }
+
+    .detailtitle {
+        font-size: 38px;
+        margin: 50px 0 35px;
+    }
+
+    .detail-images {
+        width: 88%;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .s_img {
+        aspect-ratio: 1 / 1;
+    }
+
+    .s_img_bt {
+        padding: 18px 28px;
+        font-size: 16px;
+    }
+}
